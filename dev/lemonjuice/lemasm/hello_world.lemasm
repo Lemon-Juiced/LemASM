@@ -1,0 +1,8 @@
+#DATA
+// STR is String
+STR hello_world = "Hello, World!
+
+#CODE
+// CPR is Console Print
+CPR hello_world
+RET
