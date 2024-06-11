@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LemASM Documentation</title>
+    <link rel="icon" type="image/x-icon" href="LemASM64px.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>LemASM Documentation</h1>
+    <div>
+        The following is the documentation for the LemASM language.
+    </div>
+
+    <h2>Interpreter Arguments</h2>
+    <table>
+        <tr>
+            <th>Argument</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>-d</td>
+            <td>Debug: Starts the interpreter in debug mode.</td>
+        </tr>
+        <tr>
+            <td>-h</td>
+            <td>Help: Opens the Documentation HTML file.</td>
+        </tr>
+        <tr>
+            <td>-o &lt;output_file&gt;</td>
+            <td>Output File: Speficies a file to output to.</td>
+        </tr>
+    </table>
+    <br>
+
+    <h2>Structure of a LemASM Program</h2>
+    <div>
+        A LemASM program is split into two sections: the Data Section and the Code Section.<br>
+        The Data Section is used to define string constants before the code is executed.<br>
+        The Data Section is optional, but must be placed before the Code Section.<br>
+        The Code Section is where the actual code is written.<br>
+        The following will show which instructions are available in each section.
+    </div>
+
+    <h3>How To Call A Section</h3>
+    <table>
+        <tr>
+            <th>Mnemonic/Symbol</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>#DATA</td>
+            <td>Enters the Data Section.</td>
+        </tr>
+        <tr>
+            <td>#CODE</td>
+            <td>Enters the Code Section.</td>
+        </tr>
+    </table>
+    <br>
+
+    <h3>Viable In Both Sections</h3>
+    <table>
+        <tr>
+            <th>Mnemonic/Symbol</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>//</td>
+            <td>Comments the rest of the line.</td>
+        </tr>
+    </table>
+    <br>
+
+    <h3>The Data Section</h3>
+    <table>
+        <tr>
+            <th>Mnemonic/Symbol</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>STR &lt;string_name&gt; = "&lt;string_text&gt;"</td>
+            <td>Creates a string with the name provided.</td>
+        </tr>
+    </table>
+    <br>
+
+    <h3>The Code Section</h3>
+    <table>
+        <tr>
+            <th>Mnemonic/Symbol</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>.&lt;label_name&gt;</td>
+            <td>Defines a label.</td>
+        </tr>
+        <tr>
+            <td>ADD</td>
+            <td>Adds the top two values of the stack, if two are avaible to add.</td>
+        </tr>
+        <tr>
+            <td>CPR</td>
+            <td>Console Print: Prints a string to the console.</td>
+        </tr>
+        <tr>
+            <td>DIV</td>
+            <td>Divides the top two values of the stack, if two are avaible to divide.</td>
+        </tr>
+        <tr>
+            <td>DUP</td>
+            <td>Duplicates the top value of the stack, if one is available to duplicate.</td>
+        </tr>
+        <tr>
+            <td>JEQ &lt;label_name&gt;</td>
+            <td>Jump Equal: Jumps to a specified label if the top two values of the stack are equal.</td>
+        </tr>
+        <tr>
+            <td>JGT &lt;label_name&gt;</td>
+            <td>Jump Greater Than: Jumps to a specified label if the top value of the stack is greater than the second.</td>
+        </tr>
+        <tr>
+            <td>JLT &lt;label_name&gt;</td>
+            <td>Jump Less Than: Jumps to a specified label if the top value of the stack is less than the second.</td>
+        </tr>
+        <tr>
+            <td>JMP &lt;label_name&gt;</td>
+            <td>Jumps to a specified label.</td>
+        </tr>
+        <tr>
+            <td>JNQ &lt;label_name&gt;</td>
+            <td>Jump Not Equal: Jumps to a specified label if the top two values of the stack not are equal.</td>
+        </tr>
+        <tr>
+            <td>MOD</td>
+            <td>Mods the top two values of the stack, if two are avaible to mod.</td>
+        </tr>
+        <tr>
+            <td>MUL</td>
+            <td>Multiplies the top two values of the stack, if two are avaible to multiply.</td>
+        </tr>
+        <tr>
+            <td>PSH &lt;integer&gt;</td>
+            <td>Pushes a specified integer onto the stack.</td>
+        </tr>
+        <tr>
+            <td>POP</td>
+            <td>Pops the top value of the stack, if there is a value that can be popped.</td>
+        </tr>
+        <tr>
+            <td>RAN</td>
+            <td>Pushes a random integer onto the stack.</td>
+        </tr>
+        <tr>
+            <td>RET</td>
+            <td>Returns the top number on the stack.</td>
+        </tr>
+        <tr>
+            <td>ROR</td>
+            <td>Randomize Order: Randomizes the order of the stack.</td>
+        </tr>
+        <tr>
+            <td>SUB</td>
+            <td>Subtracts the top two values of the stack, if two are avaible to subtract.</td>
+        </tr>
+        <tr>
+            <td>SWP</td>
+            <td>Swaps the top two values of the stack, if two are avaible to swap.</td>
+        </tr>
+    </table>
+    <br>
+
+    <h2>Examples</h2>
+    <div>Here are some examples of LemASM code.</div><br>
+    
+    <h3>Example 1: Hello World</h3>
+    <h4>hello_world.lemasm</h4>
+    <code>
+        #DATA<br>
+        &nbsp;&nbsp;STR hello_world = "Hello, World!"<br>
+        <br>
+        &nbsp;&nbsp;#CODE<br>
+        &nbsp;&nbsp;CPR hello_world<br>
+        &nbsp;&nbsp;RET<br>
+    </code>
+    <h4>Output</h4>
+    <code>
+        Hello, World!<br>
+    </code>
+    
+</body>
+</html>

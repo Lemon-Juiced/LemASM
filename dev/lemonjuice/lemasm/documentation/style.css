@@ -1,0 +1,59 @@
+/* Reset default styles */
+* {
+    margin: 2.5px;
+    padding: 2.5px;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+div, code {
+    padding: 10px;
+}
+
+/* Header styles */
+header {
+    background-color: #333333;
+}
+
+header h1 {
+    color: #ffffff;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Consolas, monospace;
+}
+
+table th:first-child,
+table td:first-child {
+    width: 30%;
+}
+
+table th {
+    background-color: lightblue;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    font-family: Consolas, monospace;
+}

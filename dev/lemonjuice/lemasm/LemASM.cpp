@@ -449,6 +449,7 @@ int interpretFile(string fileName) {
  * 3. Check if any additional command-line arguments were provided.
  *    - Acceptable arguments are:
  *    - Debug                                 > -d 
+ *    - Help                                  > =h
  *    - Output To File                        > -o <output_file>
  * 4. Pass the input file to the LemASM interpreter.
  * 
@@ -476,6 +477,11 @@ int main(int argc, char* argv[]) {
     for (int i = 2; i < argc; i++) {
         string arg = argv[i];
         if (arg == "-d") debugMode = true;
+        else if (arg == "-h") {
+            string documentationPath = "./documentation/LemASMDocumentation.HTML";
+            system(("start " + documentationPath).c_str());
+            return 0;
+        }
         else if (arg == "-o") {
             if (i + 1 < argc) {
                 outputToFile = true;
