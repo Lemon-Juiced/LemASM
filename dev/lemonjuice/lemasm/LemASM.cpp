@@ -41,6 +41,7 @@ ErrorHandler errorHandler; // An instance of the error handler.
  * 2. Print the stringMap.
  * 
  * @return 0 if the data section was interpreted successfully, 1 otherwise.
+ * @author lemonjuice.dev
 */
 int dataSection() {
     for (int i = dataSectionLine; i < codeSectionLine - 1; i++) {
@@ -106,6 +107,7 @@ int dataSection() {
  * 2. Print the jumpMap.
  * 
  * @return 0 if the code section was interpreted successfully, 1 otherwise unless RET is called, in which case it will return what RET returns.
+ * @author lemonjuice.dev
 */
 int codeSection() {
     for (int i = codeSectionLine; i < lines.size(); i++) {
@@ -390,6 +392,7 @@ int codeSection() {
  * 
  * @param fileName The name of the file to interpret.
  * @return 0 if the file was interpreted successfully, 1 otherwise.
+ * @author lemonjuice.dev
  */
 int interpretFile(string fileName) {
     // Open the file
@@ -455,6 +458,8 @@ int interpretFile(string fileName) {
  * 
  * @param argc The number of command-line arguments.
  * @param argv The command-line arguments. 
+ * @return 0 if the file was interpreted successfully, 1 otherwise.
+ * @author lemonjuice.dev
 */
 int main(int argc, char* argv[]) {
     string usageString = "Usage: LemASM <input_file> [-d] [-p] [-o <output_file>]";
