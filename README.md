@@ -2,7 +2,7 @@
 LemASM is an Assembly-like language that revolves around a stack, this is the bundled LemASM interpreter.
 
 ## Getting Started
-### Setup For Windows User
+### Setup For Windows Users
 If you are on Windows you have two options:<br>
 1. You can either follow the Setup For Unix-Like OS Users.<br>
 2. You can download the bundled LemASM.exe file and utilize it (however keep in mind it may not be up-to-date).<br>
