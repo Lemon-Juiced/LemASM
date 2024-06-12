@@ -81,6 +81,8 @@ int dataSection() {
  * //  > This symbol is used to comment out a line.
  * .   > This symbol is used to define a label. Example: ".label_name".
  * ADD > This mnemonic adds the top two values of the stack. Example: "ADD".
+ * CPK > This mnemonic is used to peek at the top value of the stack and print it to the console. Example: "CPK".
+ * CPP > This mnemonic is used to pop a value off the stack and print it to the console. Example: "CPP".
  * CPR > This mnemonic is used to print a string to the console. Example: "CPR hello_world".
  * DIV > This mnemonic divides the top two values of the stack. Example: "DIV".
  * DUP > This mnemonic duplicates the top value of the stack. Example: "DUP".
@@ -134,6 +136,27 @@ int codeSection() {
                 int b = lStack.top();
                 lStack.pop();
                 lStack.push(a + b);
+            }
+        }
+
+        // Console Peek (CPK)
+        else if (contents.find("CPK") == 0) {
+            if (lStack.empty()) {
+                errorHandler.handleErrorWithLine("Stack is empty.", line.getLineNumber(), contents);
+                return 1;
+            } else {
+                cout << lStack.top() << endl;
+            }
+        }
+
+        // Console Pop (CPP)
+        else if (contents.find("CPP") == 0) {
+            if (lStack.empty()) {
+                errorHandler.handleErrorWithLine("Stack is empty.", line.getLineNumber(), contents);
+                return 1;
+            } else {
+                cout << lStack.top() << endl;
+                lStack.pop();
             }
         }
 
